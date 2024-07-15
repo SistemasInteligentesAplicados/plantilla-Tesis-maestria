@@ -1,0 +1,185 @@
+
+\chapter{Estado del arte} \label{chap:EstadoDelArte} 
+
+En este capítulo, se presentará un análisis exhaustivo del estado del arte en el campo de técnicas de control para sistemas hidropónicos. Se examinarán las investigaciones y los avances más relevantes realizados durante los años, abordando los principales temas, teorías y enfoques utilizados en el área. Se identificarán las brechas y las limitaciones en la literatura existente, justificando la necesidad de la presente investigación. 
+
+El monitoreo de los sistemas hidropónicos es de suma importancia dentro de la literatura dando lugar a una diversa exploración de algoritmos. Por ejemplo en \cite{chowdhury2020design}, los autores implementaron un sistema hidropónico vertical por el alto nivel de calor en su región, utilizando un microcontrolador como cerebro para la comunicación entre sensores y el uso de las técnicas del IoT en una plataforma. Para minimizar la intervención humana, es necesario construir sistemas que ayuden en diferentes condiciones climáticas, donde las técnicas hidropónicas son adecuadas por sus altos beneficios. Además, se recomienda utilizar un controlador de parámetros de su sistema automático para minimizar la intervención humana necesaria para mantener el sistema en operación. Igualmente, en \cite{siddiq2019achpa}, los autores implementaron un sistema hidropónico basado en la técnica por goteo, la cual entrega agua directamente a las plantas, además de presentar un método denominado Agricultura Hidropónica Controlada Automáticamente (ACHPA, por sus siglas en inglés), donde se monitorean y controlan los parámetros del sistema. En cambio, los autores en \cite{dinccer2019smart} implementaron un sistema de raíz flotante para ayudar a niños sobre la comprensión y cuidado de plantas, y para mejorar sus habilidades cognitivas, además de utilizar una aplicación móvil y un servidor web para ver el progreso de los niños y los parámetros del sistema, y tener una base de datos para el registro de actividades. 
+
+En la actualidad se han implementado distintos métodos para el control automático de estos sistemas. Por ejemplo en \cite{untoro2022iot} utilizan un controlador ON/OFF para el controlar del nivel de agua y temperatura en un sistema NFT. También se han utilizado distintos tipos de microcontroladores para la automatización, como por ejemplo en \cite{patil2020monitoring}, donde los autores implementaron un controlador ON/OFF utilizando un Node-MCU para obtener los parámetros de un sistema tipo NFT. En \cite{tatas2022reliable}, usaron un dispositivo Zigbee para el envío de información a través de radiodifusión digital utilizando además un controlador difuso en un sistema de raíz flotante.
+
+En \cite{al2020kendali}, los autores implementaron un controlador difuso utilizando el método de Mamdani para un sistema tipo DFT, el cual controla el pH en la solución nutritiva del sistema, sin considerar que dentro de los parámetros de un sistema hidropónico, debe considerarse otros parámetros, como el de la conductividad eléctrica dentro de la solución utilizada. Algo similar reportan en \cite{nurhasan2018implementation}, donde los autores implementaron un controlador difuso utilizando el método de Sugeno para un sistema hidropónico de tipo DFT, encargado de controlar los parámetros del pH, la humedad y la temperatura en la solución nutritiva, para después enviar los parámetros obtenidos a un servidor en la red. El control propuesto envía los parámetros del sistema mediante un protocolo de mensajería MQTT e igualmente esta implementación pueden adaptarse a los distintos tipos de sistemas hidropónicos, como los mencionados en \cite{fuangthong2018automatic}, donde los autores implementaron un sistema basado en la técnica flotante de raíz dinámica (DRFT, por sus siglas en inglés), además de utilizar la lógica difusa para realizar un control de la conductividad eléctrica y el pH. En \cite{simanjuntak2022design} realizan un sistema NFT con un controlador difuso, además de utilizar un sensor de color para observar el crecimiento de los plantíos y observar su evolución mediante una aplicación móvil de manera remota.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Recientemente, las redes neuronales han sido utilizadas para controlar diferentes partes de un sistema hidropónico. En el caso de \cite{mehra2018iot}, los autores implementaron un sistema de tipo NFT, donde se utilizó una red neuronal profunda para la obtención de los parámetros de pH dentro de una solución nutritiva con el uso de redes Bayesianas y aprendizaje automático, los cuales mandan datos a un servidor utilizando técnicas del IoT. En otro artículo \cite{tenzer2020digital}, los autores implementaron una red neuronal para monitorear el crecimiento de plantas de lechuga en un sistema hidropónico, utilizando una cámara y la captura de imágenes para obtener distintas series temporales y así calcular los píxeles verdes de las plantas. En \cite{ramakrishnam2022design}, los autores desarrollaron un sistema que integra inteligencia artificial y técnicas del IoT con una aplicación móvil llamada \emph{AI-SHES} la cual consiste en 3 fases: en la primera fase, diseñaron un circuito de conexiones para sensores, específicamente de humedad de suelo, luz solar, turbidez, pH, temperatura, nivel de agua y de imagen (cámara); En la segunda fase implementan una red neuronal convolucional profunda para predecir el nivel de nutrientes en el sistema; En la tercera fase, desarrollaron una aplicación para el monitoreo remoto de los parámetros. 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Otros sistemas de control utilizan la inferencia neurodifusa adaptativa (ANFIS, por sus siglas en inglés) como lo es el caso de \cite{vincentdo2023nutrient}, donde utilizan un sistema NFT y su controlador envía sus datos a través de un servidor web para monitorear el pH, CE y el nivel del agua. 
+
+Dado a la revisión de la literatura se observa en la tabla \ref{tab:t2} una comparativa sobre la recolección de información entre sistemas.
+
+%\begin{longtable}{|c|>{\raggedright}p{0.7\linewidth}|}
+
+\begin{landscape}
+%\begin{longtable}{|p{1cm}|p{1cm}|p{2cm}|p{5cm}|p{2cm}|p{2cm}|}
+\begin{longtable}{p{0.12\textwidth}|p{0.10\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}}
+
+%\caption{A sample long table.} \label{tab:long} \\
+\caption{Comparativa entre sistemas similares. \label{tab:t2}} \\
+\hline
+\hline
+\textbf{Refe-rencia} &
+\textbf{Tipo de Sistema} & 
+\textbf{Tipo de Control} & 
+\textbf{Sensores} &
+\textbf{Monitoreo} &
+\textbf{Dispositivos} 
+
+
+\\ 
+\hline
+\hline 
+\endfirsthead
+
+\multicolumn{6}{c}%
+{{\bfseries \tablename\ \thetable{} -- continuación de la página anterior}} \\
+\hline
+\hline
+\textbf{Referencia} &
+\textbf{Tipo de Sistema} & 
+\textbf{Tipo de Control} & 
+\textbf{Sensores} &
+\textbf{Monitoreo} &
+\textbf{Dispositivos}  
+\\ \hline  \hline
+\endhead
+
+\hline \hline \multicolumn{6}{r}{{Continua en la siguiente página}} \\ \hline\hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+%\noalign{\hrule height 2pt}
+         \cite{chowdhury2020design} & Vertical  &  ON/OFF & CE, pH, temperatura del agua, nivel de agua y flujo de agua&Aplicación móvil, servidor web &ESP8266\\
+        
+        \hline
+        
+        \cite{siddiq2019achpa} & Técnica por goteo   & ON/OFF  &  pH, temperatura, humedad&Ninguno&Ninguno\\
+         
+        \hline
+        
+        \cite{dinccer2019smart} & Raíz flotante   & Ninguno &  pH, temperatura del agua& Aplicación móvil, servidor web & Raspberry PI\\
+        
+         \hline
+         
+         \cite{untoro2022iot}& NFT   & ON/OFF &Nivel del agua, temperatura del agua & Ninguno & Ninguno\\
+         
+         \hline
+         
+        \cite{patil2020monitoring} &  NFT & ON/OFF & Temperatura del agua, pH, CE, humedad&Aplicación móvil& Node-MCU ESP12\\
+      
+        \hline
+        
+          \cite{tatas2022reliable} & Raíz flotante   & Difuso Mamdani & Temperatura, humedad, pH, CE, OD y temperatura del agua& Servidor web & Zigbee\\
+          
+         \hline
+         
+         \cite{al2020kendali} &  DFT & Difuso Mamdani & CE, pH, temperatura del agua & Servidor Web & ESP8622\\
+     
+    \hline
+    
+        \cite{nurhasan2018implementation} &  DFT & Difuso Sugeno& pH, temperatura del agua &Servidor Web& Raspberry PI\\
+
+    \hline
+      
+        \cite{fuangthong2018automatic} & DRFT   & Difuso Mamdani &  CE y el pH & Ninguno& Ninguno\\      
+      
+    \hline
+    
+        \cite{simanjuntak2022design} & NFT & Difuso Mamdani &  pH, CE, temperatura del agua, color & Aplicación móvil & ESP8266\\
+         \hline
+
+        \cite{mehra2018iot} & NFT   & Red neuronal profunda &  pH, temperatura del agua & Servidor Web & Raspberry PI\\
+        
+    \hline
+    
+         \cite{tenzer2020digital} &  NFT & Red neuronal & Cámara& Ninguno& Ninguno\\
+         
+    \hline
+           
+        \cite{ramakrishnam2022design} & NFT &  Red neuronal convolucional profunda &   Humedad de suelo, luz solar, turbidez, pH, temperatura del agua, nivel de agua y módulo de cámara& Aplicación móvil& Raspberry PI\\
+    
+    \hline
+    
+          \cite{vincentdo2023nutrient} & NFT   & ANFIS &  pH, CE y nivel de agua & Servidor web & Raspberry PI\\
+         \hline
+            
+       Sistema Propuesto &  DFT & Difuso Mamdani & Humedad, temperatura, CE y pH& Aplicación móvil, Servidor Web& Raspberry PI, ESP32 \\
+
+\end{longtable}
+
+%\begin{table}[htb!]
+%\centering
+%\caption{Comparativa entre sistemas similares. \label{tab:tx2}} 
+%\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{3.0cm}|p{6.5cm}|p{3.0cm}|p{2.3cm}|}
+ %   \hline
+  %    \textbf{Sistema} & \textbf{Tipo de Sistema} & \textbf{Tipo de control} & \textbf{Sensores} & \textbf{Monitoreo} &\textbf{Dispositivos} \\
+   %\noalign{\hrule height 2pt}
+
+    %    \cite{mehra2018iot} & NFT   & Red neuronal profunda &  pH, temperatura del agua & Servidor Web & Raspberry PI\\
+        
+    %\hline
+    
+     %    \cite{tenzer2020digital} &  NFT & Red neuronal & Cámara& Ninguno& Ninguno\\
+         
+    %\hline
+           
+     %   \cite{ramakrishnam2022design} & NFT &  Red neuronal convolucional profunda &   Humedad de suelo, luz solar, turbidez, pH, temperatura del agua, nivel de agua y módulo de cámara& Aplicación móvil& Raspberry PI\\
+    
+    %\hline
+    
+%     \cite{al2020kendali} &  DFT & Difuso Mamdani & CE, pH, temperatura del agua & Servidor Web & ESP8622\\
+     
+ %   \hline
+    
+  %      \cite{nurhasan2018implementation} &  DFT & Difuso Sugeno& pH, temperatura del agua &Servidor Web& Raspberry PI\\
+
+   % \hline
+     
+    %    \cite{patil2020monitoring} &  NFT & ON/OFF & Temperatura del agua, pH, CE, humedad&Aplicación móvil& Node-MCU ESP12\\
+      
+    %\hline
+      
+     %   \cite{fuangthong2018automatic} & DRFT   & Difuso Mamdani &  CE y el pH & Ninguno& Ninguno\\      
+      
+    %\hline
+      
+     %   \cite{chowdhury2020design} & Vertical  &  ON/OFF & CE, pH, temperatura del agua, nivel de agua y flujo de agua&Aplicación móvil, servidor web &ESP8266\\
+        
+      %  \hline
+        
+       % \cite{siddiq2019achpa} & Técnica por goteo   & ON/OFF  &  pH, temperatura, humedad&Ninguno&Ninguno\\
+         
+        %\hline
+        
+        %\cite{dinccer2019smart} & Raíz flotante   & Ninguno &  pH, temperatura del agua& Aplicación móvil, servidor web & Raspberry PI\\
+%         \hline
+ %         \cite{vincentdo2023nutrient} & NFT   & ANFIS &  pH, CE y nivel de agua & Servidor web & Raspberry PI\\
+  %       \hline
+         
+   %       \cite{tatas2022reliable} & Raíz flotante   & Difuso Mamdani & Temperatura, humedad, pH, CE, OD y temperatura del agua& Servidor web & Zigbee\\
+    %     \hline
+     %     \cite{simanjuntak2022design} & NFT & Difuso Mamdani &  pH, CE, temperatura del agua, color & Aplicación móvil & ESP8266\\
+      %   \hline
+       %   \cite{untoro2022iot}& NFT   & ON/OFF &Nivel del agua, temperatura del agua & Ninguno & Ninguno\\
+        % \hline
+                    
+       %Sistema Propuesto &  DFT & Difuso Mamdani & Humedad, temperatura, CE y pH& Aplicación móvil, Servidor Web& Raspberry PI, ESP32 \\
+       
+%\hline
+%\end{tabular}
+
+%\end{table}
+\end{landscape}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

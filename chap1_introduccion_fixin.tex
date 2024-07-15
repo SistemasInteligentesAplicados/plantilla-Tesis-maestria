@@ -1,0 +1,97 @@
+\chapter{Introducción}       \label{chap:introduction}
+Recientemente, los sistemas hidropónicos han ganado interés en el sector agrícola por los altos problemas de sequías, dado que son sistemas que hacen óptimo los recursos para el cultivo de plantas herbáceas. Por lo cual, en el presente trabajo de investigación se tiene como objetivo monitorear los parámetros de un sistema hidropónico basados en el cultivo de plantas sin la necesidad del suelo, simplemente cumpliendo las técnicas necesarias para la nutrición de las plantas a cultivar, suministrando a sus raíces una solución nutritiva con base en los minerales esenciales requeridos de la planta.
+
+La importancia de estudiar este tema en particular radica en el margen se benefició que proviene el uso de la implementación de las nuevas técnicas de agricultura, ya que, hoy en día existen distintas formas de realizar tus sembradíos, ya sea pequeña o a grande escala. En este trabajo se implementará un sistema hidropónico basado en la técnica de flujo profundo (DFT, por sus siglas en inglés), el cual dicho sistema realizara una serie de tareas específicas automatizadas para controlar el crecimiento de las plantas en estos sistemas, dichas tareas son un algoritmo capaz de realizar un controlador difuso utilizando la metodología de la lógica difusa y los parámetros de errores que se encuentren en el sistema y su ambiente, para obtener una estabilidad de ellos, y así utilizar actuadores para generar el manejo útil del sistema. Además de la interacción del Internet de las Cosas (IoT, por sus siglas en inglés) para el monitoreo de los parámetros obtenidos en el sistema, utilizando una conexión en línea y dos interfaces gráficas. Además, en este capítulo, se define el desarrollo del tema de tesis a partir de su motivación, problemática y objetivos a alcanzar, a través de diferentes etapas a desarrollar.
+
+En el capítulo 2 se muestra el marco teórico, en donde se encuentran todos los conceptos relacionados al proyecto de tesis que se expone, esto con el fin de comprender mejor el tema que se aborda, como lo son los tipos de sistemas hidropónicos, sobre la solución nutritiva, lógica difusa, controladores y el IoT. En el capítulo 3 se presenta el estado del arte, en el cual se realiza un análisis acerca de los trabajos y proyectos que se relacionan con el proyecto de tesis y que podemos encontrarlos disponibles en la literatura, además de tener una tabla comparativa entre sistemas. En el capítulo 4 se describe el desarrollo del diseño y construcción del sistema hidropónico en cuanto a su hardware, la implementación de las técnicas de análisis y conexión con el uso del IoT utilizando una Raspberry Pi 3 Modelo B+ a través de una interfaz gráfica de usuario, así como la integración de sensores, siendo todo esto controlado por el microcontrolador ESP32. En el capítulo 5 se muestran los resultados y discusiones acerca de la implementación de las diferentes técnicas expuestas en el capítulo cuatro, las cuales sirvieron para la obtención de los parámetros involucrados en el cálculo de los parámetros esenciales para el buen manejo del sistema, con el fin de conservar los plantíos en buenas condiciones. En el capítulo 6 se presentan las conclusiones del proyecto de tesis, así como las limitaciones a las cuales se enfrentó y los productos obtenidos, indicando a su vez el trabajo por realizar a futuro.
+    
+\section{Motivación} \label{chap:motivacion}
+Gran parte de la economía de México se encuentra en las actividades de agricultura y la ganadería, en las cuales el estado de Tamaulipas se encuentra en uno de los principales generadores de dichas actividades, la cual la Universidad Politécnica de Victoria es un entorno ideal para el desarrollo de investigaciones en el área de la agricultura. Además, uno de los principales problemas en esta rama es el actual cambio climático, ya que genera el endurecimiento de las condiciones de suministros y la robusta demanda de los productos básicos de la agricultura, lo cual se busca implementar alternativas viables para generar sistemas que permitan incrementar la productividad actual. De acuerdo con varios estudios, recientemente se encuentra en tendencia mundial la creación de sistemas hidropónicos para la producción de alimentos, sin embargo, se requieren ciertos conocimientos técnicos y herramientas que permitan llevar a cabo el proceso de siembra y cosecha. Por ende, es necesario proponer ciertas herramientas que nos permitan monitorear los cultivos en los sistemas de manera controlada, reduciendo la cantidad de personas requeridas para realizar dicho monitoreo. 
+
+\section{Planteamiento del problema} \label{chap:problema}
+De acuerdo con el Banco Mundial la economía de México depende de un 3.8\% del producto interno bruto (PIB) a la agricultura en 2020, colocándonos como la séptima potencia agrícola mundial \cite{Bank}. Dicho esto, debido al aumento en la demanda de alimentos y lo que conlleva gastos de mano de obra, además de que, el último año el sector agrícola sufre sequías debido a los problemas climáticos que se encuentran en el país, esto ha impulsado a la sociedad a buscar alternativas viables para aumentar la producción agrícola y así generar un aumento de exportación de alimentos, por lo cual, hoy en día los agricultores se sienten motivados al experimentar con alternativas de agricultura de interiores como lo puede ser la acuaponía, aeroponía e hidroponía, donde dichas técnicas no conllevan el uso de suelo o algún sustrato, dando como resultado dicho interés para mejor tantos las condiciones económicas como las de la agricultura en sí, dicho esto generar cambios en el entorno agrícola da como lugar a alternativas que pueden generarse en todo el país para aumentar la producción en un campo laboral especifico, en el cual, la agricultura viene siendo el mayor punto para nuestro país.
+\newpage
+\section{Objetivos} \label{chap:objetivos}
+
+\subsection{Objetivo general} \label{chap:ogeneral}
+Desarrollar un sistema que permita el monitoreo remoto en tiempo real de un sistema hidropónico, controlado por algoritmos basados en lógica difusa.
+
+\subsection{Objetivos específicos} \label{chap:oespecificos}
+\begin{enumerate}
+\item Determinar las variables a monitorear en un sistema hidropónico con base en la literatura.
+\item Diseñar las interfaces y circuitos necesarios para la adquisición de datos del sistema hidropónico.
+\item Adquirir datos de sensores asociados al sistema hidropónico.
+%    \item Diseñar un circuito para la adquisición de datos de redes de sensores.
+\item Evaluar la arquitectura más adecuada para la comunicación del sistema.
+\item Diseñar y programar las interfaces necesarias para obtener en tiempo real los datos de los sensores y enviarlos a través de Internet.
+\item Diseñar un controlador difuso con base en los parámetros de entradas y salidas requeridos por el sistema. % en base a los antecedentes y consecuentes dentro del sistema
+\item Realizar pruebas del monitoreo y control de un cultivo específico.
+\item Implementar un sistema de visión para vigilar el desarrollo del crecimiento del cultivo monitoreado.
+
+\end{enumerate}
+
+
+\section{Justificación} \label{chap:justificacion}
+La presente investigación está dirigida a la creación de un prototipo capaz de analizar los parámetros de entrada de un sistema hidropónico de pequeñas dimensiones y controlar sus parámetros de salida. El proyecto se presenta como una alternativa para el cultivo de plantas herbáceas a un menor costo, que sea monitoreable de manera remota, basado en estrategias de control difuso para reducir al mínimo la intervención humana y donde sus principales ventajas en la hidroponía son las siguientes \cite{aquino2015manual}:
+\begin{itemize}
+\item Permite cultivar la misma especie ciclo tras ciclo.
+\item Rinde varias cosechas al año.
+\item Ahorra en el consumo de agua.
+\item Facilita el control del potencial de hidrógeno (pH).
+\item Permite corregir deficiencias y excesos de fertilizante.
+\item Logra productos de mayor calidad.
+\item Rinde más por unidad de superficie.
+\item Acorta el tiempo para la cosecha.
+\item Reduce los costos de producción.
+\item Reduce la contaminación del ambiente y los riesgos de erosión.
+\item Elimina el gasto en maquinaria agrícola.
+\item Recupera la inversión con rapidez.
+\end{itemize}
+
+Hasta hoy, la forma en la que se ven las nuevas técnicas de agricultura llega a tomar ciertas variantes para mejorar la producción de alimentos, además del manejo de reducción de tiempos y errores. Por lo cual, la automatización de un proceso de un sistema hidropónico es una de las herramientas más factibles para garantizar un cambio en la producción, reduciendo el tiempo de cosecha de alimentos, además de ser un proceso repetitivo. Así mismo, se desarrollan e implementan mejoras en procesos específicos como lo es el control de la solución nutritiva dentro del sistema para cumplir con las expectativas planteadas. La industria agrícola debe ser competitiva en el mercado, por lo cual debe realizar la mejor eficiencia y calidad de los productos alimenticios, por esto es indispensable realizar cambios necesarios al aplicar estas nuevas alternativas. El presente proyecto surge de la necesidad de cambios, ya que debido a las difíciles circunstancias ambientales que se encuentra México, la amenaza de sequía es prácticamente la mitad del territorio, siendo un 46.01\% la cual padece sequía moderada o excepcional \cite{Sequia}.
+
+Por lo tanto, mediante la automatización y el uso del IoT en los sistemas hidropónicos es posible optimizar la cosecha en base al proceso de producción de alimentos, tomando en cuenta que ciertas de sus tareas es la captura de parámetros generados y obtener un controlador específico para el manejo de la solución nutritiva.
+
+\section{Diseño de investigación}
+Dentro de esta investigación se demanda un uso cuidadoso de criterios acerca de la planificación y objetivos que se desean obtener, por este medio se realiza un estudio con un enfoque cuantitativo, ya que está dirigido a establecer aspectos de un sistema hidropónico juntos a las premisas que conllevan parte de este estudio, como lo es la perspectiva acerca de las técnicas agrícolas de interiores que sustentan nuestra investigación, los procedimientos que se siguen con base en los rigurosos estándares acerca del cuidado de las plantas y las herramientas y sensores que son empleados a lo largo de esta investigación. La planificación con este enfoque se concreta en un diseño de investigación de estrategias y el plan de trabajo definidos en cuanto a tiempo y disposición de recursos. En esta misma línea, cabe recalcar que, que el propósito de responder a las preguntas de investigación planteadas y cumplir con los objetivos específicos como general, se tienen contemplados a realizar cada uno de ellos de forma minuciosa. En cuanto a sus características, el plan de trabajo que se tiene contemplado se ha abarcado un 30 \% dentro de la estructura del sistema, sensores, precios, cronograma, los instrumentos de recolección de la información y aplicación de las IoT. Las etapas del proceso investigación establecidas se encuentran: el diseño de investigación con enfoque cuantitativo, planteamiento del problema, formulación de los objetivos, hipótesis, justificación y alcance del proyecto. La selección del diseño de investigación más adecuado para estos temas y de acuerdo con el planteamiento del problema y las metas esperadas del estudio es así mismo el diseño basándonos en el enfoque cuantitativo. Los diseños cuantitativos pueden ser experimentales o no experimentales, en nuestro caso se utiliza un diseño experimental, ya que su clasificación se refiere a experimentaciones específicas, cada uno con distinta profundidad o alcance, estos son recogidos mediante los datos requeridos para el análisis del sistema.
+
+\subsection{Pregunta de investigación}
+\begin{itemize}
+%Que tipos de algoritmos se pueden utilizar para la automatización y monitoreo de un sistema hidroponico de tipo DFT? 
+%\item ¿Cómo se beneficia la agricultura con la automatización y monitoreo de los sistemas hidropónicos? 
+%\item ¿Cómo afecta la implementación de algoritmos de control difuso automatizados y tecnologías emergentes de monitoreo, como lo es el IoT, dentro de un sistema hidropónico DFT?
+\item ¿Puede el control difuso automatizar un sistema hidropónico DFT monitoreado remotamente?
+\end{itemize}
+\subsection{Hipótesis}
+\begin{itemize}
+\item La lógica difusa es un método adecuado para controlar los parámetros de una solución nutritiva en un sistema hidropónico DFT monitoreado remotamente por el IoT.
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

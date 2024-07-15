@@ -1,0 +1,245 @@
+\documentclass[twoside,spanish,ESP,MSc]{plantillaLabUPV}
+%\documentclass[oneside,spanish,ESP,MSc]{plantillaLabUPV}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{csquotes} %%%%%% YHM
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+\spanishdecimal{.}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[unicode=true,
+ bookmarks=true,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=true]
+ {hyperref}
+
+% 30 de Mayo 2022 - Actualizacion MANM - SE incluye el DOI y otros URLs en el listado
+% \usepackage[backend=biber,style=ieee]{biblatex}
+%\usepackage[backend=biber,style=apa]{biblatex} % para lo que soliciten formato APA
+%\usepackage[backend=biber,style=geschichtsfrkl]{biblatex} % para lo que soliciten formato Documento
+\usepackage{comment}
+
+% \addbibresource{bibiliography/referencia-tesis.bib}
+
+
+
+\hypersetup{pdftitle={tesis_david},
+ pdfauthor={David Josué Esquivel Godoy},
+ pdfsubject={Tesis de Maestria},
+ pdfkeywords={tesis, maestria, upvictoria, upv},
+ linkcolor=darkblue, citecolor=darkblue, urlcolor=darkblue, linktoc=page}
+\usepackage{breakurl}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+
+
+\raggedbottom
+
+\@ifundefined{definecolor}
+ {\usepackage[usenames]{color}}{}
+\definecolor{darkblue}{rgb}{0.0, 0.4, 0.8}
+
+%\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{longtable}
+
+\usepackage{subfig}
+%\usepackage{subfigure}
+%\usepackage{ucs} %%%% Comentado por YHM 5Sp2023
+%\usepackage{graphicx}
+
+\usepackage{latexsym}
+
+\usepackage{appendix}
+
+\usepackage{array}
+\usepackage{float}
+\usepackage{rotfloat}
+\usepackage{amsthm}
+
+% Comentados por YHM 5Sp2023
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+%\usepackage{algorithmicx}
+%\usepackage[noend]{algpseudocode}
+%\usepackage[linesnumbered,ruled]{algorithm2e}
+
+
+\usepackage{url}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+\usepackage[withpage]{acronym}
+\usepackage{pdfpages}
+\captionsetup{labelsep = period}
+\usepackage{fancyhdr} 
+
+\usepackage{wrapfig}
+\usepackage{ulem} % TAchar cosas
+\usepackage{color,soul} % Resaltar
+%\usepackage{lanscape} % Resaltar
+\usepackage{lscape}
+\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{array}
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+
+% \usepackage[printonlyused,withpage]{acronym}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\tabularnewline}{\\}
+\newcommand{\lyxdot}{.}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algoritmo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\titleen {IMPLEMENTATION OF A DEEP FLOW TECHNIQUE HYDROPONIC SYSTEM CONTROLLED BY FUZZY LOGIC AND MONITORED USING INTERNET OF THINGS}
+%\title {CONTROL DIFUSO Y MONITOREO DE UN SISTEMA HIDROPÓNICO DE TÉCNICA DE FLUJO PROFUNDO}
+\title {DISEÑO Y CONSTRUCCIÓN DE UN SISTEMA HIDROPÓNICO DE TÉCNICA DE FLUJO PROFUNDO CONTROLADO POR LÓGICA DIFUSA Y SUPERVISADO MEDIANTE INTERNET DE LAS COSAS}
+
+\author      	{DAVID JOSU\'{E} ESQUIVEL GODOY}
+\department	{ Maestría en Ingeniería}
+\departmenten	{ }
+\degreein       	{Sistemas Inteligentes}
+\degreeinen     	{ }
+\city           		{Cd. Victoria, Tamaulipas, M\'{e}xico}
+\date           	{\today}
+\degreeday     	 {19}
+\degreeyear     	{2023}
+\degreemonth   	 {Septiembre}
+\degreemonthen  	{Febrero}
+%\acknowledgmenttoproject {
+%Esta investigación fue parcialmente financiada mediante el proyecto ...
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chair       	{DR. MARCO AURELIO NUÑO MAGANDA}
+\chair         	{DR. YAHIR HERNÁNDEZ MIER}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\dedication     {Pendiente...}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\abstract{
+\vspace{-.5cm}
+\setlength{\parindent}{0cm}
+La presente investigación aplica los conocimientos de control para automatizar un sistema hidropónico de técnica de flujo profundo de manera eficiente. El estudio se enfoca en la implementación de un controlador difuso para reducir la intervención humana y minimizar errores, apoyándose en el internet de las cosas para monitorear las variables de interés en los sistemas hidropónicos: el pH, la conductividad eléctrica, la temperatura y la humedad del aire de los cultivos. Se explora el diseño y construcción de un sistema hidropónico con actuadores y sensores adecuados para ajustar los parámetros de interés en tiempo real en el desarrollo de los cultivos. También, se diseña e integra un controlador difuso para la toma de decisiones con interfaces de usuario y de monitoreo. Se muestran además los resultados de experimentos realizados con el controlador difuso para compensar perturbaciones en las distintas variables monitoreadas dentro del sistema hidropónico construido. Igualmente, se aborda la viabilidad económica de la implementación de tecnologías automatizadas, considerando tanto los costos iniciales como los ahorros a largo plazo. Como trabajo complementario relacionado, se propuso un prototipo basado en visión por computadora que permitirá monitorear el crecimiento de las plantas en el sistema hidróponico, el cual será de utilidad para quien esté encargado de controlar dicho crecimiento de manera remonta. Los resultados experimentales muestran que el controlador implementado permite compensar las perturbaciones introducidas durante el funcionamiento del sistema, lo que confirma su viabilidad de su aplicación en el control automático de sistemas hidropónicos de técnica de flujo profundo. El sistema de monitoreo propuesto efectivamente almacena y permite observar en tiempo real por medio de las interfaces en PC y teléfono móvil el comportamiento de las variables importantes para el sistema.
+% los análisis resaltan cómo el monitoreo y automatización  de los sistemas hidropónicos puede revolucionar la forma en que se produce alimentos al aumentar la eficiencia, mejorar la calidad y contribuir a la sustentabilidad. 
+}
+
+\abstracten{
+\vspace{-.5cm}
+The present research applies control knowledge to automate a deep flow technique hydroponic system. The study focuses on the implementation of a fuzzy controller to reduce human intervention and minimize errors, relying on the Internet of Things to monitor the variables of interest in hydroponic systems: pH, electrical conductivity, temperature and humidity of the air of crops. The design and construction of a hydroponic system with actuators and sensors suitable for adjusting the parameters of interest in the development of crops in real time is explored. A fuzzy controller for decision making with user and monitoring interfaces is designed and integrated. The results of experiments carried out with the fuzzy controller to compensate for disturbances in the different variables monitored within the constructed hydroponic system are also shown. Likewise, the economic viability of the implementation of automated technologies is addressed, considering both the initial costs and the long-term savings. As a related complementary work, a prototype based on computer vision was proposed that will allow monitoring the growth of plants in the hydroponic system, which will be useful for whoever is in charge of controlling such growth in a remote way. The experimental results show that the implemented controller allows to compensate for the disturbances introduced during the operation of the system, which confirms its viability of its application in the automatic control of hydroponic systems of deep flow technique. The proposed monitoring system effectively stores and allows to observe in real time through the interfaces on PC and mobile phone the behavior of the important variables for the system.
+
+
+
+%This research addresses the knowledge about the monitoring and automation of a hydroponic system, as an innovative solution to improve efficiency and productivity in agriculture. The study focuses on how a controller is implemented using the methodology of fuzzy logic and IoT, based on advanced automation technologies, in hydroponic systems can optimize the control of key variables such as pH, electrical conductivity, temperature and humidity of the air of the crops. The research examines the importance of automation in indoor farming techniques, highlighting how technology can reduce human intervention and minimize errors. That said, it explores the design, implementation of sensors and actuators to monitor and adjust environmental parameters in real time. In addition, the integration of the control system is analyzed, as well as the decision-making algorithms and user interfaces and also a detailed study of cases occurred within hydroponic systems. It also addresses the economic viability of the implementation of automated technologies, considering both the initial costs and the long-term savings. Ultimately, the analyses highlight how monitoring and automating hydroponic systems can revolutionize the way food is produced by increasing efficiency, improving quality and contributing to sustainability. 
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\publication{
+ 
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgments{
+\bigskip{}
+%\setlength{\parindent}{0cm}
+%\begin{itemize}
+%\begin{doublespace}
+
+Primeramente, agradezco a Dios por haberme acompañado en esta gran aventura mi maestría, por ser mi gran fortaleza y brindarme una vida llena de aprendizajes, increíbles experiencias y sobre todo felicidad.
+
+Le doy sobre todo las gracias a mis padres Domingo y Juana por apoyarme incondicionalmente en todo momento, por inculcarme los valores, y haberme dado la oportunidad de tener mi educación a posgrado en el transcurso de mi vida tal vez unos ya no estén físicamente pero aun así fueron y serán mi mayor ejemplo a seguir.
+
+A mis hermanos Eugenio por ayudarme y aconsejarme en todo lo posible y hasta lo imposible, a Sabina por ser mi alegría en todo momento.
+
+A mis grandes amigos y compañeros que estuvieron para mí y brindarme su confianza y creer en mí, y hacer mi etapa posgrado una experiencia que jamás podría repetirse.
+
+Le agradezco de corazón por el apoyo y dedicación de su tiempo a mis profesores por haber compartido conmigo muchas partes de su conocimiento y sobre todo su amistad Dr. Said, Dr. Pech, Dr. Benjamin y Dr. Rocha.
+
+Gracias a mi director de tesis el Dr. Nuño y mi co-director Dr. Yahir por creer en mí, y haberme brindado la oportunidad de desarrollar mi tesis de posgrado en base a sus enseñanzas.
+
+Mamaina Sabina Castillo Rodríguez que, aunque ya no te encuentres con nosotros físicamente a ti te lo agradezco todo tú fuiste mi más grande ejemplo inigualable por creer en mi hasta los últimos momentos.
+
+%\end{doublespace}
+%\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NOMENCLATURA %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nomenclature{
+
+
+\def\arraystretch{1.5}
+\begin{table}[h]
+\begin{tabular}{lll}
+\textbf{ACHPA}          & \multicolumn{1}{c}{\textit{}} & Automatically Controlled Hydro-Ponic Agriculture                \\
+\textbf{ANFIS}          & \multicolumn{1}{c}{\textit{}} & Adaptive Neuro-Fuzzy Inference System                \\
+\textbf{BGR}          & \multicolumn{1}{c}{\textit{}} & Blue Green Red                \\
+\textbf{CE}          & \multicolumn{1}{c}{\textit{}} & Conductividad Eléctrica                \\
+\textbf{DFT}          & \multicolumn{1}{c}{\textit{}} & Deep Flow Technique               \\
+\textbf{DRFT}     &                               & Dynamic Root Floating Technique \\
+\textbf{HSV}     &                               & Hue Saturation Value \\
+\textbf{Hp}     &                               & Horsepower \\
+\textbf{IoT}          & \multicolumn{1}{c}{\textit{}} & Internet of Things                              \\
+\textbf{MicroSD}      &                               & Micro tarjeta de memoria Secure Digital         \\
+\textbf{MQTT}      &                               & Message Queuing Telemetry Transport         \\
+\textbf{NFT}          & \multicolumn{1}{c}{\textit{}} & Nutrient Film Technique             \\
+\textbf{OD}      &                               & Oxígeno Disuelto         \\
+\textbf{pH}      &                               & Potencial de Hidrógeno         \\
+\textbf{PIB}      &                               & Producto Interior Bruto         \\
+\textbf{Pi OS}     &                               & Sistema Operativo recomendado para la computadora Raspberry Pi \\
+\textbf{PLC}     &                               & Programmable Logic Controller \\
+\textbf{PVC}          &                               & Polyvinyl Chloride                          \\
+\textbf{PMW}          &                               & Pulse Width Modulation                          \\
+\textbf{USB}          &                               & Universal Serial Bus                            \\
+\end{tabular}
+\end{table}
+
+}
+   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatother
+
+\begin{document}
+
+\makeintropages %%%% YHM a revisar por Marco
+
+%%%%%%%%%%%%%%%%%%%%% CAPITULOS %%%%%%%%%%%%%%%%%%%%%%
+\include{chap1_introduccion_fixin}
+\include{chap2_MT}
+\include{chap3_RevLiteratura}
+\include{chap4_Desarrollo}
+\include{chap5_Resultados}
+\include{chap6_Conclusiones}
+
+
+
+
+
+\bibliographystyle{acm}
+\bibliography{bibiliography/referencia-tesis}
+% En vez de los dos comandos anteriores
+%\printbibliography
+
+
+\end{document}
